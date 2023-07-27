@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema({
     email: {
@@ -22,3 +22,6 @@ const UserSchema = new Schema({
         maxLenght: [50, "Fullname must be at most 50 characters"]
     },
 })
+
+const User = models.User || model('User', UserSchema)
+export default User;
