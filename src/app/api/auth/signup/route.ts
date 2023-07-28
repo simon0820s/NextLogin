@@ -2,11 +2,11 @@ import { NextResponse } from "next/server"
 import User from '@/models/user'
 import { connectDB } from "@/libs/mongodb"
 import bcrypt from 'bcryptjs'
+import { error } from "console"
 
 export async function POST(request: Request) {
 
     const { fullname, email, password } = await request.json()
-    console.log(fullname, email, password)
 
     if (!password || password.length < 6) return NextResponse.json({
         message: "Password must be at least 6 characters"
@@ -33,12 +33,17 @@ export async function POST(request: Request) {
         })
 
         const savedUser = await user.save()
-        console.log(savedUser)
         return NextResponse.json(savedUser)
 
     } catch (error) {
-        console.log(error)
-        return NextResponse.error()
+        if (error instanceof Error) {
+
+            return NextResponse.json({
+                message: error.message
+            }, {
+                status: 400
+            })
+        }
     }
 
 }
