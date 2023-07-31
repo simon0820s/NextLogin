@@ -6,7 +6,7 @@ const handler = NextAuth({
         CredentialsProvider({
             name: 'credentials',
             credentials: {
-                email: { label: "Email", type: "text", placeholder: "jsmith@gmail.com"},
+                email: { label: "Email", type: "email", placeholder: "jsmith@gmail.com"},
                 password: { label: "Password", type: "password", placeholder: "******"}
             },
             authorize(credentials, req) {
@@ -14,7 +14,18 @@ const handler = NextAuth({
                 return user
             }
         })
-    ]
+    ],
+    callbacks: {
+        jwt({account, token, user, profile, session}) {
+            console.log({
+                account,
+                token,
+                user,
+                profile,
+            })
+            return token
+        },
+    }
 })
 
 export { handler as GET, handler as POST}
