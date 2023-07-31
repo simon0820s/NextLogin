@@ -7,7 +7,7 @@ const handler = NextAuth({
             name: 'credentials',
             credentials: {
                 email: { label: "Email", type: "text", placeholder: "jsmith@gmail.com"},
-                password: { label: "Password", type: "password", placeholder: "*******"}
+                password: { label: "Password", type: "password", placeholder: "******"}
             },
             authorize(credentials, req) {
                 const user = { id: "1", fullname: 'J Smith', email: 'sar@gmail.com' }
