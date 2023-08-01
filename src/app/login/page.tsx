@@ -1,6 +1,6 @@
 function LoginPage() {
   return (
-    <div>LoginPage</div>
+    <form action=""></form>
   )
 }
 
