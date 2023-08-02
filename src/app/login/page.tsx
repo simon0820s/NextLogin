@@ -31,7 +31,7 @@ export default function LoginPage() {
   return (
     <div className='flex flex-col w-screen p-60'>
       <form className='flex flex-col gap-2' onSubmit={handleSubmit} >
-        <h1 className='text-violet-400 font-bold text-2xl'>Signin</h1>
+        <h1 className='text-indigo-300 font-bold text-2xl'>Signin</h1>
 
         <input
           type='email'
