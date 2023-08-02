@@ -6,7 +6,7 @@ export default function Navbar() {
         <nav className='bg-zinc-900 p-4'>
             <div className='flex justify-between container mx-auto'>
                 <Link href="/">
-                    <h1 className='font-bold text-xl text-indigo-400'>NextAuth</h1>
+                    <h1 className='font-bold text-2xl text-indigo-400'>NextAuth</h1>
                 </Link>
                 <ul className='flex gap-x-2'>
                     <li className='px-3 py-1'>

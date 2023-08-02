@@ -43,7 +43,7 @@ export default function RegisterPage() {
   return (
     <div className='flex flex-col w-screen p-60'>
       <form className='flex flex-col gap-2' onSubmit={handleSubmit} >
-        <h1 className='font-bold text-indigo-300 text-2xl'>Signup</h1>
+        <h1 className='font-bold text-indigo-300 text-2xl mb-1'>Signup</h1>
         <input
           type='text'
           placeholder='Simon Arboleda'
