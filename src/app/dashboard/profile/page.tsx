@@ -8,8 +8,8 @@ export default function ProfilePage() {
 
     console.log(session, status)
     return (
-        <div>
-            <h1>Profile</h1>
+        <div className="flex flex-col gap-4 p-10 bg-slate-700 rounded-lg m-8">
+            <h1 className="font-bold text-xl">Profile</h1>
             <pre>
                 {
                     JSON.stringify({
