@@ -1,6 +1,6 @@
 "use client"
 
-import { useSession } from "next-auth/react"
+import { useSession, signOut } from "next-auth/react"
 
 export default function ProfilePage() {
 
@@ -20,6 +20,9 @@ export default function ProfilePage() {
                     }
                 </pre>
             </div>
+            <button onClick={() => { signOut() }} className='bg-indigo-500 px-4 py-2 w-40 ml-1 rounded-md font-semibold hover:bg-indigo-700 transition-all ease-in-out duration-400  '>
+                Logout
+            </button>
         </div>
     )
 }
