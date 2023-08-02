@@ -21,7 +21,7 @@ export default function LoginPage() {
 
     if (authResponse?.error) return setError(authResponse.error as string)
 
-    if (authResponse?.ok) return router.push("/dashboard")
+    if (authResponse?.ok) return router.push("/dashboard/profile")
 
 
     setError("")
@@ -29,24 +29,24 @@ export default function LoginPage() {
   }
 
   return (
-    <div className='p-8'>
+    <div className='flex flex-col w-screen p-60'>
       <form className='flex flex-col gap-2' onSubmit={handleSubmit} >
-        <h1 className='text-neutral-100 font-bold text-2xl'>Signin</h1>
+        <h1 className='text-violet-400 font-bold text-2xl'>Signin</h1>
 
         <input
           type='email'
           placeholder='simon0820s@gmail.com'
           name='email'
-          className='bg-zinc-800 px-4 py-2 block mb-2 rounded-sm' />
+          className='bg-zinc-800 font-semibold px-4 py-2 block mb-2 rounded-sm' />
 
         <input
           type='password'
           placeholder='*******'
           name='password'
-          className='bg-zinc-800 px-4 py-2 block mb-2 rounded-sm' />
+          className='bg-zinc-800 font-semibold px-4 py-2 block mb-2 rounded-sm' />
 
         {
-          error && <p className='text-xs text-red-600 font-bold'> {error} </p>
+          error && <p className='text-sm text-red-600 font-bold'> {error} </p>
         }
         <button type='submit' className='bg-indigo-500 px-4 py-2 rounded-md font-semibold hover:bg-indigo-700 transition-all ease-in-out duration-400  '>
           Login
